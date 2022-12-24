@@ -283,6 +283,10 @@ public:
     void resolvePeerHostNames(bool resolve);
     bool isRecursiveDownloadEnabled() const;
     void setRecursiveDownloadEnabled(bool enable);
+#if (defined(Q_OS_UNIX) && !defined(Q_OS_MACOS))
+    bool useSystemIconTheme() const;
+    void useSystemIconTheme(bool enabled);
+#endif
 #ifdef Q_OS_WIN
     bool neverCheckFileAssoc() const;
     void setNeverCheckFileAssoc(bool check = true);
